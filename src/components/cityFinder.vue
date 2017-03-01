@@ -7,11 +7,11 @@
             
             <div class="row">
                 <div class="col-md-12">
-                    <input v-model="postcode" v-on:keyup.enter="lookupCity" type="text" class="form-control" placeholder="Enter a postcode...">
+                    <input v-model="postcode" v-on:keyup.enter="lookupCity" v-on:input="resetResults" type="text" class="form-control" placeholder="Enter a postcode...">
                 </div>
 
                 <div class="col-md-12">
-                    <button v-on:click="lookupCity" class="find-button btn btn-primary btn-block">Find city</button>
+                    <button v-on:click="lookupCity" class="find-button btn btn-primary btn-block">Find it</button>
                 </div>
                 <div class="col-md-12">
                     <p class="city"> {{ city }} </p>
@@ -36,22 +36,25 @@ export default {
   },
   computed: {
     postcodeApiString: function() {
-        return 'http://ZiptasticAPI.com/' + this.$data.postcode;
-        console.log(postcodeApiString);
+        return 'http://maps.googleapis.com/maps/api/geocode/json?address=' + this.$data.postcode;
     }
   },
   methods: {
       lookupCity: function () {
           this.postcodeValidation = true;
-          if (this.$data.postcode.length == 5) {
+          if (this.$data.postcode.length >= 5) {
               this.$data.city = 'searching...';
               axios.get(this.postcodeApiString).then(response => {
-                  this.$data.city = `${response.data.city}, ${response.data.state}`;
+                this.$data.city = response.data.results[0].formatted_address;
+                console.log(response.data);
               })
           } else {
               this.$data.city = '';
               this.postcodeValidation = false;
           }
+      },
+      resetResults: function() {
+          this.$data.city = '';
       }
   }
 }
