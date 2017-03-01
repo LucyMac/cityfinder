@@ -1,6 +1,8 @@
 # city-finder
 
-> A Vue.js project
+> A Vue.js project to find addresses and locations using the Google API.
+
+Simply go [here](https://lucymac.github.io/cityfinder/), type in a postcode and off you go! 
 
 ## Build Setup
 
