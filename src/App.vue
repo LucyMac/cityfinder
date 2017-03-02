@@ -6,6 +6,9 @@
             <cityFinder></cityFinder>
           </div> 
         </div>
+        <aside>
+          <p>by Lucy Zidour</p>
+        </aside>
       </div> 
   </div>
 </template>
@@ -33,6 +36,13 @@ export default {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  aside p {
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    bottom: 10px;
   }
 
 </style>
