@@ -8,6 +8,7 @@
         </div>
         <aside>
           <p>by Lucy Zidour</p>
+          <a href="https://github.com/LucyMac"><img src="./assets/github-icon.svg" alt="GitHub icon" width="30px"></a>
         </aside>
       </div> 
   </div>
@@ -38,11 +39,19 @@ export default {
     background-size: cover;
   }
 
-  aside p {
-    color: #fff;
-    font-size: 16px;
-    position: absolute;
-    bottom: 10px;
-  }
+aside {
+  position: absolute;
+  bottom: 20px;
+}
+
+aside, a, p {
+  display: inline-block;
+}
+
+aside p {
+  color: #fff;
+  font-size: 16px;
+  padding: 3px 5px
+}
 
 </style>
