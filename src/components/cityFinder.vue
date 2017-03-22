@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     postcodeApiString: function() {
-        return 'http://maps.googleapis.com/maps/api/geocode/json?address=' + this.$data.postcode;
+        return 'https://maps.googleapis.com/maps/api/geocode/json?address=' + this.$data.postcode;
     }
   },
   methods: {
@@ -101,8 +101,8 @@ h1 {
   }
 
  .find-button:hover {
-    background-color: #00ffdd;
-    border-color: #00ffdd;
+    background-color: #4adbad;
+    border-color: #4adbad;
   }
 
  .find-button:focus {
