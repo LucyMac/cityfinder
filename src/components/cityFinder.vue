@@ -100,6 +100,11 @@ h1 {
     border-color: #33b797;
   }
 
+ .find-button:hover {
+    background-color: #00ffdd;
+    border-color: #00ffdd;
+  }
+
  .find-button:focus {
       outline: none;
   }
